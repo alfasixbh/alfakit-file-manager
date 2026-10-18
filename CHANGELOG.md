@@ -1,0 +1,7 @@
+# Changelog
+
+All notable changes to `alfasix/alfakit-file-manager` are documented in this file.
+
+## Unreleased
+
+- Initial release: `FileManagerPlugin` adds a file manager page for one or more Laravel disks (`disks()`), limited to a root folder (`root()`, `tenants/{key}` by default on tenancy panels). Folder tree, breadcrumbs, grid and list views, sorting, search in the folder and below it (with limits), multi-selection with mouse, touch and keyboard, drag-and-drop uploads with progress through the panel's temporary upload endpoint, drag-and-drop moves, create, rename, move, copy, delete to a trash with restore and retention, details (type, size, dimensions), previews (images, PDF, video, audio, text with a size cap) with image editing, single downloads and zip downloads (size and file limits, rate limited), signed share links with expiry choices and optional stored public links that can be revoked. Every operation normalises paths and stays under the root, checks `authorize()`, `can()` abilities and `readOnly()`, and uploads go through a blocklist of dangerous extensions (also inside double extensions), detected-type checks and `acceptedFileTypes()`. `FileManagerPicker` picks files from the manager into a form (with `toMediaCollection()` for spatie/laravel-medialibrary). Rendered by the `file-manager` and `FileManagerPicker` components in `@alfakit/react`, `@alfakit/vue` and `@alfakit/svelte`, right to left included.

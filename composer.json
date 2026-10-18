@@ -1,0 +1,94 @@
+{
+  "name": "alfasix/alfakit-file-manager",
+  "description": "A Google-Drive-lite file manager for any Laravel filesystem disk in AlfaKit panels: folders, uploads with progress, drag and drop, previews, zip downloads, trash, shareable links and a file picker field. Every operation is authorised, path-checked and tenant-scoped.",
+  "keywords": [
+    "laravel",
+    "alfakit",
+    "file-manager",
+    "filesystem",
+    "storage",
+    "uploads",
+    "s3"
+  ],
+  "homepage": "https://alfakit.dev/docs/plugins/file-manager",
+  "license": "MIT",
+  "type": "library",
+  "authors": [
+    {
+      "name": "Alfa Six",
+      "homepage": "https://alfasixbh.com",
+      "role": "Developer"
+    }
+  ],
+  "support": {
+    "issues": "https://github.com/alfasixbh/alfakit/issues",
+    "source": "https://github.com/alfasixbh/alfakit/tree/main/packages/plugins/file-manager"
+  },
+  "require": {
+    "php": "^8.3",
+    "ext-fileinfo": "*",
+    "alfasix/alfakit": "^0.1|@dev"
+  },
+  "suggest": {
+    "ext-zip": "Download several files or folders as one zip archive.",
+    "alfasix/alfakit-media-library": "Add files picked with FileManagerPicker to a Spatie media library collection."
+  },
+  "autoload": {
+    "psr-4": {
+      "AlfaSix\\AlfakitFileManager\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "AlfaSix\\AlfakitFileManager\\Tests\\": "tests/"
+    }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "AlfaSix\\AlfakitFileManager\\AlfakitFileManagerServiceProvider"
+      ]
+    },
+    "alfakit": {
+      "version": "^0.1",
+      "frontend": null,
+      "showcase": {
+        "demoPath": "files",
+        "tour": [
+          "Open Content > Files",
+          "Upload a file with progress",
+          "Preview an image or PDF",
+          "Move files to the trash"
+        ],
+        "clips": [
+          "react-light",
+          "react-dark",
+          "vue-light",
+          "vue-dark",
+          "svelte-light",
+          "svelte-dark"
+        ],
+        "worksWith": [
+          "media-library",
+          "cms",
+          "backup"
+        ],
+        "highlights": [
+          "Folders on any Laravel disk",
+          "Uploads with progress and drag and drop",
+          "Image, PDF and text previews",
+          "Zip downloads",
+          "Trash and search",
+          "Share links",
+          "File picker field",
+          "Path-checked and tenant-scoped"
+        ]
+      }
+    }
+  },
+  "config": {
+    "sort-packages": true
+  },
+  "minimum-stability": "stable",
+  "prefer-stable": true
+}
