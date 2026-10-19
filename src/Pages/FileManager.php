@@ -897,7 +897,7 @@ class FileManager extends Page
         if ($upload->size() > $max * 1024) {
             $upload->delete();
 
-            throw ValidationException::withMessages(['key' => __('alfakit-file-manager::file-manager.errors.too_large', ['name' => $name, 'max' => \Illuminate\Support\Number::fileSize($max * 1024)])]);
+            throw ValidationException::withMessages(['key' => __('alfakit-file-manager::file-manager.errors.too_large', ['name' => $name, 'max' => \AlfaSix\Alfakit\Support\NumberFormat::fileSize($max * 1024, 0)])]);
         }
 
         // The type of the contents, detected again here (never the browser's).

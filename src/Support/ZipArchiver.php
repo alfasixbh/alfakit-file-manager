@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace AlfaSix\AlfakitFileManager\Support;
 
+use AlfaSix\Alfakit\Support\NumberFormat;
 use AlfaSix\AlfakitFileManager\FileManagerPlugin;
-use Illuminate\Support\Number;
 use Illuminate\Validation\ValidationException;
 use RuntimeException;
 use ZipArchive;
@@ -62,7 +62,7 @@ final class ZipArchiver
                 }
 
                 if ($size > $maxBytes) {
-                    throw ValidationException::withMessages(['paths' => __('alfakit-file-manager::file-manager.errors.zip_too_large', ['max' => Number::fileSize($maxBytes)])]);
+                    throw ValidationException::withMessages(['paths' => __('alfakit-file-manager::file-manager.errors.zip_too_large', ['max' => NumberFormat::fileSize($maxBytes, 0)])]);
                 }
             }
         }

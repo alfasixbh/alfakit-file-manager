@@ -6,6 +6,7 @@ namespace AlfaSix\AlfakitFileManager\Support;
 
 use AlfaSix\Alfakit\Support\SchemaContext;
 use AlfaSix\AlfakitFileManager\Pages\FileManager;
+use Carbon\CarbonInterface;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Crypt;
@@ -87,7 +88,7 @@ final class SignedFiles
         ];
     }
 
-    public static function shareUrl(string $panel, string $disk, string $root, string $path, Carbon $expiresAt): string
+    public static function shareUrl(string $panel, string $disk, string $root, string $path, CarbonInterface $expiresAt): string
     {
         return URL::temporarySignedRoute('alfakit-file-manager.share', $expiresAt, [
             'file' => Crypt::encryptString(json_encode(['panel' => $panel, 'disk' => $disk, 'root' => $root, 'path' => $path], JSON_THROW_ON_ERROR)),

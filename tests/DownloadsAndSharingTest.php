@@ -193,6 +193,19 @@ it('only lets the user who asked for an archive download it', function (): void 
     fmVisit($url)->assertNotFound();
 });
 
+it('shares files in apps that use immutable dates (the starter kits)', function (): void {
+    Illuminate\Support\Facades\Date::use(Carbon\CarbonImmutable::class);
+
+    try {
+        fmPlugin()->publicLinks(false);
+        Storage::disk('public')->put('docs/brochure.pdf', '%PDF-1.4 brochure');
+
+        expect(fmAction('share', ['path' => 'docs/brochure.pdf', 'expiry' => 60])->assertOk()->json('result.url'))->toContain('/alfakit-files/share?');
+    } finally {
+        Illuminate\Support\Facades\Date::useDefault();
+    }
+});
+
 it('shares files with signed temporary links anyone can open', function (): void {
     fmPlugin()->publicLinks(false);
     Storage::disk('public')->put('docs/brochure.pdf', '%PDF-1.4 brochure');
