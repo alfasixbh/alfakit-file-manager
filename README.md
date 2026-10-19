@@ -1,6 +1,8 @@
 # AlfaKit File Manager
 
-<p><picture><source media="(prefers-color-scheme: dark)" srcset="../../../art/alfasix/alfa-six-micro-white.svg"><img src="../../../art/alfasix/alfa-six-micro-navy.svg" alt="" width="24" height="18" align="top"></picture> <sub>by <a href="https://alfasixbh.com">Alfa Six</a></sub></p>
+<p><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/alfasixbh/alfakit/main/art/alfasix/alfa-six-micro-white.svg"><img src="https://raw.githubusercontent.com/alfasixbh/alfakit/main/art/alfasix/alfa-six-micro-navy.svg" alt="" width="24" height="18" align="top"></picture> <sub>by <a href="https://alfasixbh.com">Alfa Six</a></sub></p>
+
+> This is a read-only split of the [AlfaKit monorepo](https://github.com/alfasixbh/alfakit/tree/main/packages/plugins/file-manager). Please open issues and pull requests there.
 
 A Google-Drive-lite file manager for any Laravel filesystem disk in [AlfaKit](https://alfakit.dev) panels: folders, grid and list views, search, multi-selection, drag-and-drop uploads with progress, move, copy, rename, trash, previews, zip downloads and shareable links, plus a `FileManagerPicker` form field. Every operation is authorised, path-checked and tenant-scoped on the server.
 
