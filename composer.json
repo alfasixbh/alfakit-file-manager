@@ -25,7 +25,7 @@
     "source": "https://github.com/alfasixbh/alfakit/tree/main/packages/plugins/file-manager"
   },
   "require": {
-    "php": "^8.3",
+    "php": "^8.4",
     "ext-fileinfo": "*",
     "alfasix/alfakit": "^0.1|@dev"
   },
