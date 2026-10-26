@@ -1,0 +1,3 @@
+# Dev-only files stay out of the Composer dist archives (Packagist installs).
+/tests export-ignore
+/.gitattributes export-ignore
