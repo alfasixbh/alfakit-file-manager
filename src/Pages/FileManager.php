@@ -1049,8 +1049,7 @@ class FileManager extends Page
             'expiresAt' => $link->expires_at?->toIso8601String(),
             'expired' => $link->isExpired() ?: null,
             'createdAt' => $link->created_at?->toIso8601String(),
-            'downloads' => $link->downloads,
-        ], static fn (mixed $value): bool => $value !== null);
+        ], static fn (mixed $value): bool => $value !== null) + ['downloads' => (int) $link->getAttribute('downloads')];
     }
 
     /**

@@ -59,7 +59,8 @@ class FileManagerLink extends Model
         $token = Str::random(48);
 
         $link = new static;
-        $link->fill([...$attributes, 'token_hash' => self::hash($token), 'token' => Crypt::encryptString($token)]);
+        // `downloads` is set here, not left to the column default, so the returned model has it.
+        $link->fill(['downloads' => 0, ...$attributes, 'token_hash' => self::hash($token), 'token' => Crypt::encryptString($token)]);
         $link->save();
 
         return [$link, $token];

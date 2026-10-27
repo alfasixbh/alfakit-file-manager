@@ -258,6 +258,8 @@ it('stores public links that can be listed and revoked', function (): void {
 
     expect($result['url'])->toMatch('#/alfakit-files/link/[A-Za-z0-9]{48}$#')
         ->and($result['link']['expiresAt'] ?? null)->toBeNull()
+        // A new link has its download count (the column default) right away.
+        ->and($result['link']['downloads'] ?? null)->toBe(0)
         ->and($timed['link']['expiresAt'])->not->toBeNull();
 
     $link = FileManagerLink::query()->firstOrFail();
