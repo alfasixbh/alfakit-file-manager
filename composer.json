@@ -27,7 +27,7 @@
   "require": {
     "php": "^8.4",
     "ext-fileinfo": "*",
-    "alfasix/alfakit": "^0.1|@dev"
+    "alfasix/alfakit": "^0.2|@dev"
   },
   "suggest": {
     "ext-zip": "Download several files or folders as one zip archive.",
@@ -50,7 +50,7 @@
       ]
     },
     "alfakit": {
-      "version": "^0.1",
+      "version": "^0.2",
       "frontend": null,
       "showcase": {
         "demoPath": "files",
